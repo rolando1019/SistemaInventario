@@ -12,7 +12,7 @@ namespace Sistema_Inventario.Entities
         public int IdProducto { get; set; }
         public DateTime Fechayhora { get; set; }
         public string TipoTransaccion { get; set; }
-        public decimal Cantidad { get; set; }
+        public int Cantidad { get; set; }
                
         [ForeignKey(nameof(Usuario))]
         public int IdUsuario { get; set; }

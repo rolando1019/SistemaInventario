@@ -15,6 +15,7 @@ namespace Sistema_Inventario.Mappings
                 CreateMap<Rol,RolDTO>();
                 CreateMap<Proveedor, ProveedorDTO>();
                 CreateMap<Transaccion, TransaccionDTO>();
+                CreateMap<Transaccion, GuardarTransaccion>();
 
             //DTO -> Entidad
                 CreateMap<ProductoDTO, Producto>();
@@ -22,6 +23,7 @@ namespace Sistema_Inventario.Mappings
                 CreateMap<RolDTO, Rol>();
                 CreateMap<ProveedorDTO, Proveedor>();
                 CreateMap<TransaccionDTO,Transaccion>();
+                CreateMap<GuardarTransaccion,Transaccion>();
         }
         }
 }

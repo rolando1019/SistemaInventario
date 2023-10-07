@@ -10,10 +10,20 @@ namespace Sistema_Inventario.dtos
         public int IdProducto { get; set; }
         public DateTime Fechayhora { get; set; }
         public string TipoTransaccion { get; set; }
-        public decimal Cantidad { get; set; }
+        public int Cantidad { get; set; }
         [ForeignKey(nameof(Usuario))]
         public int IdUsuario { get; set; }
         public Usuario Usuario { get; set; }
         public Producto Producto { get; set; }
+    }
+
+    public class GuardarTransaccion
+    {
+       
+        public int IdProducto { get; set; }
+        public DateTime Fechayhora { get; set; }
+        public string TipoTransaccion { get; set; }
+        public int Cantidad { get; set; }
+        public int IdUsuario { get; set; }
     }
 }
