@@ -1,20 +1,18 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Sistema_Inventario.Entities
+namespace Sistema_Inventario.dtos
 {
-    public class Usuario
+    public class UsuarioDTO
     {
         [Key]
         public int IdUsuario { get; set; }
         public string Nombre { get; set; }
         public string Direccion { get; set; }
         public string Telefono { get; set; }
+        public int IdRol { get; set; }
         public string Clave { get; set; }
 
-
-        [ForeignKey(nameof(Rol))]
-        public int IdRol { get; set; }
-        public Rol Rol { get; set; }
+       // public int IdRol { get; set; }
+       // public string Clave { get; set; }
     }
 }

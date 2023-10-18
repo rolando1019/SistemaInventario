@@ -8,7 +8,7 @@
             RolEndpoints.Add(app);
             ProductoEndpoints.Add(app);
             TransaccionEndPoints.Add(app);
-
+            UsuarioEndpoints.Add(app);
         }
     }
 }

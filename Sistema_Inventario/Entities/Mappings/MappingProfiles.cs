@@ -16,14 +16,16 @@ namespace Sistema_Inventario.Mappings
                 CreateMap<Proveedor, ProveedorDTO>();
                 CreateMap<Transaccion, TransaccionDTO>();
                 CreateMap<Transaccion, GuardarTransaccion>();
+                CreateMap<Usuario, UsuarioDTO>();
 
             //DTO -> Entidad
-                CreateMap<ProductoDTO, Producto>();
+            CreateMap<ProductoDTO, Producto>();
                 CreateMap<CategoriaDTO, Categoria>();
                 CreateMap<RolDTO, Rol>();
                 CreateMap<ProveedorDTO, Proveedor>();
                 CreateMap<TransaccionDTO,Transaccion>();
                 CreateMap<GuardarTransaccion,Transaccion>();
+                CreateMap<UsuarioDTO, Usuario>();
         }
         }
 }

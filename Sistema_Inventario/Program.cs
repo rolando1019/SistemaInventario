@@ -29,6 +29,7 @@ builder.Services.AddScoped<IProveedor, ProveedorRepository>();
 
 builder.Services.AddScoped<ITransaccion, TransaccionRepository>();
 
+builder.Services.AddScoped<IUsuario, UsuarioRepository>();
 
 var app = builder.Build();
 
