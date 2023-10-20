@@ -12,7 +12,18 @@ namespace Sistema_Inventario.dtos
         public int IdRol { get; set; }
         public string Clave { get; set; }
 
-       // public int IdRol { get; set; }
-       // public string Clave { get; set; }
+       
     }
+
+    public class UsuarioLogin
+    {
+        
+        
+        public string Nombre { get; set; }
+        public string Clave { get; set; }
+
+        
+    }
+
+
 }

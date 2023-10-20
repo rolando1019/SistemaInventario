@@ -1,10 +1,14 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Sistema_Inventario.Context;
 using Sistema_Inventario.Endpoints;
 using Sistema_Inventario.Repositories;
 using Sistema_Inventario.Repositories.Interfaces;
+using Sistema_Inventario.Settings;
 using System.Reflection;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,6 +34,25 @@ builder.Services.AddScoped<IProveedor, ProveedorRepository>();
 builder.Services.AddScoped<ITransaccion, TransaccionRepository>();
 
 builder.Services.AddScoped<IUsuario, UsuarioRepository>();
+builder.Services.AddAuthorization();
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(option =>
+    {
+        option.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+        {
+            ValidIssuer = builder.Configuration.GetSection("TokenSetting").GetValue<string>("Issuer"),
+            ValidateIssuer = true,
+            ValidAudience = builder.Configuration.GetSection("TokenSetting").GetValue<string>("Audience"),
+            ValidateAudience = true,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration.GetSection("TokenSetting").GetValue<string>("Key"))),
+            ValidateIssuerSigningKey = true,
+            ValidateLifetime = true,
+        };
+    });
+
+
+
+builder.Services.Configure<TokenSetting>(builder.Configuration.GetSection("TokenSetting"));
 
 var app = builder.Build();
 

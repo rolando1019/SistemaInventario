@@ -13,5 +13,8 @@ namespace Sistema_Inventario.Repositories.Interfaces
         Task<int> Eliminar(int id);
 
         Task<int> Guardar();
+
+        Task<UsuarioDTO> Login(UsuarioLogin login);
+        string GenerarToken(UsuarioDTO usuario);
     }
 }

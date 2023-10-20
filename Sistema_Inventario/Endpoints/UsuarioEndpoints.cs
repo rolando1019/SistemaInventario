@@ -57,6 +57,25 @@ namespace Sistema_Inventario.Endpoints
                     return Results.NoContent(); // 204 Not content  Recurso eliminado
             }).WithTags("Usuario");
 
+            app.MapPost("api/login", async(UsuarioLogin usuario, IUsuario _usuario)=>
+            {
+
+                var loing = await _usuario.Login(usuario);
+                if (loing is null)
+                    return Results.NotFound(new {mensaje = "Usuario o contraseña incorrecto"});
+                var token = _usuario.GenerarToken(loing);
+
+                if (string.IsNullOrEmpty(token))
+                {
+                    return Results.Unauthorized();
+                }
+                else
+                {
+                    return Results.Ok(token);
+                }
+                
+
+            }).WithTags("Usuario"); 
         }
     }
     

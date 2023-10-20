@@ -15,7 +15,7 @@ namespace Sistema_Inventario.Endpoints
 
                 return Results.Ok(categorias);
 
-            }).WithTags("Categoria");
+            }).WithTags("Categoria").RequireAuthorization();
 
             app.MapGet("api/categorias/{IdCategoria}", async (int id, ICategoria _categoria) => {
                 var categoria = await _categoria.Categoria(id);
