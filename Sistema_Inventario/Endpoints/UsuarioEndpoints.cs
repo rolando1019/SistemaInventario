@@ -14,7 +14,7 @@ namespace Sistema_Inventario.Endpoints
 
                 return Results.Ok(usuarios);
 
-            }).WithTags("Usuario");
+            }).WithTags("Usuario").RequireAuthorization();
 
             app.MapGet("api/usuarios/{id}", async (int id, IUsuario _usuario) =>
             {
@@ -25,7 +25,7 @@ namespace Sistema_Inventario.Endpoints
                 else
                     return Results.Ok(usuario);  //200 ok, la solictud se realizo correctamente
 
-            }).WithTags("Usuario");
+            }).WithTags("Usuario").RequireAuthorization();
 
             app.MapPost("api/usuarios", async (UsuarioDTO usuario, IUsuario _usuario) =>
             {
@@ -36,7 +36,7 @@ namespace Sistema_Inventario.Endpoints
                 // 201 Created . El recurso se creo con exito. y se devuelve la ubucacion del recurso creado
                 return Results.Created("api/usuarios/{usuario.id}", usuario);
 
-            }).WithTags("Usuario");
+            }).WithTags("Usuario").RequireAuthorization();
 
             app.MapPut("api/usuario/{id}", async (int id, UsuarioDTO usuario, IUsuario _usuario) =>
             {
@@ -46,7 +46,7 @@ namespace Sistema_Inventario.Endpoints
                 else
                     return Results.Ok(resultado);// 200 ok, la solIcitud se realizo correctamente.
 
-            }).WithTags("Usuario");
+            }).WithTags("Usuario").RequireAuthorization();
 
             app.MapDelete("api/usuario/{id}", async (int id, IUsuario _usuario) =>
             {
@@ -55,7 +55,7 @@ namespace Sistema_Inventario.Endpoints
                     return Results.NotFound(); // 404 Not found, El recurso solicitado no existe.
                 else
                     return Results.NoContent(); // 204 Not content  Recurso eliminado
-            }).WithTags("Usuario");
+            }).WithTags("Usuario").RequireAuthorization();
 
             app.MapPost("api/login", async(UsuarioLogin usuario, IUsuario _usuario)=>
             {

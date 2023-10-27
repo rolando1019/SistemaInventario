@@ -15,7 +15,7 @@ namespace Sistema_Inventario.Endpoints
 
                 return Results.Ok(productos);
 
-            }).WithTags("Producto");
+            }).WithTags("Producto").RequireAuthorization();
 
             app.MapGet("api/productos/{IdProducto}", async (int id, IProducto _producto) =>
             {
@@ -26,7 +26,7 @@ namespace Sistema_Inventario.Endpoints
                 else
                     return Results.Ok(producto);  //200 ok, la solictud se realizo correctamente
 
-            }).WithTags("Producto");
+            }).WithTags("Producto").RequireAuthorization();
 
             app.MapPost("api/productos", async (ProductoDTO producto, IProducto _producto) =>
             {
@@ -37,7 +37,7 @@ namespace Sistema_Inventario.Endpoints
                 // 201 Created . El recurso se creo con exito. y se devuelve la ubucacion del recurso creado
                 return Results.Created("api/productos/{producto.id}", producto);
 
-            }).WithTags("Producto");
+            }).WithTags("Producto").RequireAuthorization();
 
             app.MapPut("api/producto/{id}", async (int id, ProductoDTO producto, IProducto _producto) =>
             {
@@ -47,7 +47,7 @@ namespace Sistema_Inventario.Endpoints
                 else
                     return Results.Ok(resultado);// 200 ok, la solIcitud se realizo correctamente.
 
-            }).WithTags("Producto");
+            }).WithTags("Producto").RequireAuthorization();
 
             app.MapDelete("api/producto/{id}", async (int id, IProducto _producto) =>
             {
@@ -56,7 +56,7 @@ namespace Sistema_Inventario.Endpoints
                     return Results.NotFound(); // 404 Not found, El recurso solicitado no existe.
                 else
                     return Results.NoContent(); // 204 Not content  Recurso eliminado
-            }).WithTags("Producto");
+            }).WithTags("Producto").RequireAuthorization();
 
         }
     }

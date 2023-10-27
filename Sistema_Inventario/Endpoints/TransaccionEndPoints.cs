@@ -14,7 +14,7 @@ namespace Sistema_Inventario.Endpoints
 
                 return Results.Ok(trasacciones);
 
-            }).WithTags("Transacciones");
+            }).WithTags("Transacciones").RequireAuthorization();
 
             app.MapGet("api/transacciones/{IdTransaccion}", async (int id, ITransaccion _transaccion) => {
                 var transaccion = await _transaccion.Transaccion(id);
@@ -24,7 +24,7 @@ namespace Sistema_Inventario.Endpoints
                 else
                     return Results.Ok(transaccion);  //200 ok, la solictud se realizo correctamente
 
-            }).WithTags("Transacciones");
+            }).WithTags("Transacciones").RequireAuthorization();
 
             app.MapPost("api/transacciones", async (GuardarTransaccion guardarTransaccion, ITransaccion _transaccion) => {
                 if (guardarTransaccion == null)
@@ -34,7 +34,7 @@ namespace Sistema_Inventario.Endpoints
                 // 201 Created . El recurso se creo con exito. y se devuelve la ubucacion del recurso creado
                 return Results.Created("api/transaccion/{transaccion.IdTransaccion}", guardarTransaccion);
 
-            }).WithTags("Transacciones");
+            }).WithTags("Transacciones").RequireAuthorization();
 
             app.MapPut("api/transacciones/{IdTransaccion}", async (int id, TransaccionDTO transaccion, ITransaccion _transaccion) => {
                 var resultado = await _transaccion.Modificar(id, transaccion);
@@ -43,7 +43,7 @@ namespace Sistema_Inventario.Endpoints
                 else
                     return Results.Ok(resultado);// 200 ok, la solIcitud se realizo correctamente.
 
-            }).WithTags("Transacciones");
+            }).WithTags("Transacciones").RequireAuthorization();
 
             app.MapDelete("api/transacciones/{IdTransaccion}", async (int id, ITransaccion _transaccion) => {
                 var resultado = await _transaccion.Eliminar(id);
@@ -52,7 +52,7 @@ namespace Sistema_Inventario.Endpoints
                 else
                     return Results.NoContent(); // 204 Not content  Recurso eliminado
 
-            }).WithTags("Transacciones");
+            }).WithTags("Transacciones").RequireAuthorization();
         }
     }
 }

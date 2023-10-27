@@ -12,7 +12,7 @@ namespace Sistema_Inventario.Endpoints
                 //200 OK - La solicitud se realizó correctamente
                 //y se devuelve una lista
                 return Results.Ok(roles);
-            }).WithTags("Rol");
+            }).WithTags("Rol").RequireAuthorization();
 
             app.MapGet("api/roles/{IdRol}", async (int IdRol, IRol _rol) => {
                 var rol = await _rol.Rol(IdRol);
@@ -20,7 +20,7 @@ namespace Sistema_Inventario.Endpoints
                     return Results.NotFound();//404 Not Found - El recurso solicitado no existe
                 else 
                     return Results.Ok(rol);//200 OK -La solicitud se realizó correctamente
-            }).WithTags("Rol");
+            }).WithTags("Rol").RequireAuthorization();
 
             app.MapPost("api/rol", async (RolDTO rol, IRol _rol) => {
                 if (rol == null)
@@ -30,7 +30,7 @@ namespace Sistema_Inventario.Endpoints
                 // 201 Created . El recurso se creo con exito. y se devuelve la ubucacion del recurso creado
                 return Results.Created("api/roles/{rol.IdRol}", rol);
 
-            }).WithTags("Rol");
+            }).WithTags("Rol").RequireAuthorization();
 
             app.MapPut("api/roles/{IdRol}", async (int IdRol, RolDTO rol, IRol _rol) => { 
                 var resultado = await _rol.Modificar(IdRol, rol);
@@ -46,7 +46,7 @@ namespace Sistema_Inventario.Endpoints
                     return Results.NotFound(); //404 - NotFound - El recurso solicitado no existe
                 else
                     return Results.NoContent(); //204 No Content - Recurso eliminado
-            }).WithTags("Rol");
+            }).WithTags("Rol").RequireAuthorization();
         }
     }
 }

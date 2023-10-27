@@ -25,7 +25,7 @@ namespace Sistema_Inventario.Endpoints
                 else
                     return Results.Ok(categoria);  //200 ok, la solictud se realizo correctamente
 
-            }).WithTags("Categoria");
+            }).WithTags("Categoria").RequireAuthorization();
 
             app.MapPost("api/categoria", async (CategoriaDTO categoria, ICategoria _categoria) => {
                 if (categoria == null)
@@ -35,7 +35,7 @@ namespace Sistema_Inventario.Endpoints
                 // 201 Created . El recurso se creo con exito. y se devuelve la ubucacion del recurso creado
                 return Results.Created("api/categorias/{categoria.IdCategoria}", categoria);
 
-            }).WithTags("Categoria");
+            }).WithTags("Categoria").RequireAuthorization();
 
             app.MapPut("api/categoria/{IdCategoria}", async (int id, CategoriaDTO categoria, ICategoria _categoria) => {
                 var resultado = await _categoria.Modificar(id, categoria);
@@ -44,7 +44,7 @@ namespace Sistema_Inventario.Endpoints
                 else
                     return Results.Ok(resultado);// 200 ok, la solIcitud se realizo correctamente.
 
-            }).WithTags("Categoria");
+            }).WithTags("Categoria").RequireAuthorization();
 
             app.MapDelete("api/categoria/{IdCategoria}", async (int id, ICategoria _categoria) => {
                 var resultado = await _categoria.Eliminar(id);
@@ -53,7 +53,7 @@ namespace Sistema_Inventario.Endpoints
                 else
                     return Results.NoContent(); // 204 Not content  Recurso eliminado
 
-            }).WithTags("Categoria");
+            }).WithTags("Categoria").RequireAuthorization();
         }
     }
 }

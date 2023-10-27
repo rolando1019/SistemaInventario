@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistema_Inventario", "Sistema_Inventario\Sistema_Inventario.csproj", "{409996CA-CB14-4048-8B4E-1EF893650EA7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sistema_Inventario", "Sistema_Inventario\Sistema_Inventario.csproj", "{409996CA-CB14-4048-8B4E-1EF893650EA7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaInventario.UnitTest", "..\SistemaInventario.UnitTest\SistemaInventario.UnitTest.csproj", "{AA59708F-1FDE-4642-9D6D-76DD73F1BFEC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{409996CA-CB14-4048-8B4E-1EF893650EA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{409996CA-CB14-4048-8B4E-1EF893650EA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{409996CA-CB14-4048-8B4E-1EF893650EA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA59708F-1FDE-4642-9D6D-76DD73F1BFEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA59708F-1FDE-4642-9D6D-76DD73F1BFEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA59708F-1FDE-4642-9D6D-76DD73F1BFEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA59708F-1FDE-4642-9D6D-76DD73F1BFEC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
