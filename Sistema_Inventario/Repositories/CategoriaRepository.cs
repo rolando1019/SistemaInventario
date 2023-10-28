@@ -5,6 +5,7 @@ using Sistema_Inventario.dtos;
 using Sistema_Inventario.DTOs;
 using Sistema_Inventario.Entities;
 using Sistema_Inventario.Repositories.Interfaces;
+using System.Threading.Tasks;
 
 namespace Sistema_Inventario.Repositories
 {
@@ -70,6 +71,36 @@ namespace Sistema_Inventario.Repositories
             _db.Categorias.Update(entidad);
 
             return await Guardar();
+        }
+
+        Task<CategoriaDTO> ICategoria.Categoria(int id)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        Task<ICollection<CategoriaDTO>> ICategoria.Categorias()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        Task<int> ICategoria.Crear(CategoriaDTO categoria)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        Task<int> ICategoria.Eliminar(int id)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        Task<int> ICategoria.Guardar()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        Task<int> ICategoria.Modificar(int id, CategoriaDTO categoria)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

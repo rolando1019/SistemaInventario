@@ -1,5 +1,7 @@
 ﻿using Sistema_Inventario.dtos;
 using Sistema_Inventario.DTOs;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Sistema_Inventario.Repositories.Interfaces
 {
