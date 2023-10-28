@@ -60,5 +60,47 @@ namespace SistemaInventario.UnitTest
             //Assert(Afirmar)
             Assert.True(categorias.Count > 0);
         }
+
+        [Fact]
+        public async void TestObtenerPorId()
+        {
+            //Arrange(Prepara)
+            int id = 8;
+
+            //Act (Actuar)
+            var categoria = await _categoriaRepository.Categoria(id);
+
+            //Assert(Afirmar)
+            Assert.NotNull(categoria);
+        }
+
+        [Fact]
+        public async void TestModificar()
+        {
+            //Arrange(Prepara)
+            int id = 1;
+            var objeto = new CategoriaDTO();
+            objeto.IdCategoria = id;
+            objeto.Nombre = "Lavadora";
+
+            //Act (Actuar)
+            int resultado = await _categoriaRepository.Modificar(id, objeto);
+
+            //Assert(Afirmar)
+            Assert.Equal(1, resultado);
+        }
+
+        [Fact]
+        public async void TestEliminar()
+        {
+            //Arrange(Prepara)
+            int id = 4;
+
+            //Act (Actuar)
+            int resultado = await _categoriaRepository.Eliminar(id);
+
+            //Assert(Afirmar)
+            Assert.Equal(1, resultado);
+        }
     }
 }
