@@ -17,7 +17,7 @@ namespace Sistema_Inventario.Endpoints
 
             }).WithTags("Producto").RequireAuthorization();
 
-            app.MapGet("api/productos/{IdProducto}", async (int id, IProducto _producto) =>
+            app.MapGet("api/productos/{id}", async (int id, IProducto _producto) =>
             {
                 var producto = await _producto.Producto(id);
                 if (producto == null)

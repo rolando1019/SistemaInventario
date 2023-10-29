@@ -94,3 +94,5 @@ app.UseHttpsRedirection();
 
 app.UseEndpoints();
 app.Run();
+
+public partial class Program { }
