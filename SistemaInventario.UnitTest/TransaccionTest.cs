@@ -22,7 +22,7 @@ namespace SistemaInventario.UnitTest
             public TransaccionesTest()
             {
                 var options = new DbContextOptionsBuilder<ApplicationDbContext>()  
-                    .UseSqlServer("Data Source = Marilis; Initial Catalog = Sistema_Inventario; Integrated Security = True; Trust Server Certificate = True")
+                    .UseSqlServer("Data Source = DESKTOP-RS7J03N; Initial Catalog = Sistema_Inventario; Integrated Security = True; Trust Server Certificate = True")
                     .Options;
 
                 var dbContext = new ApplicationDbContext(options);
@@ -43,7 +43,7 @@ namespace SistemaInventario.UnitTest
                 //Arrange (Preparar)
 
                 var objeto = new GuardarTransaccion();
-                objeto.IdProducto = 4;
+                objeto.IdProducto = 1;
                 objeto.Fechayhora = DateTime.Now;
                 objeto.TipoTransaccion = "Traslado";
                 objeto.Cantidad = 2;
@@ -73,7 +73,7 @@ namespace SistemaInventario.UnitTest
             public async void TestObtenerPorId()
             {
                 //Arrange(Prepara)
-                int id = 9;
+                int id = 2002;
 
                 //Act (Actuar)
                 var transaccion = await _TransaccionRepository.Transaccion(id);
@@ -85,7 +85,7 @@ namespace SistemaInventario.UnitTest
             public async void TestModificar()
             {
                 //Arrange(Prepara)
-                int id = 8;
+                int id = 2002;
                 var objeto = new TransaccionDTO();
                 // objeto.Fechayhora = ";
                 objeto.TipoTransaccion = "Compra";
@@ -103,7 +103,7 @@ namespace SistemaInventario.UnitTest
             public async void TestEliminar()
             {
                 //Arrange(Prepara )
-                int id = 9;
+                int id = 2002;
 
                 //Act (Actuar)
 
