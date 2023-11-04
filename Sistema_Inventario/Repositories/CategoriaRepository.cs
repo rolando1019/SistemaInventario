@@ -73,7 +73,7 @@ namespace Sistema_Inventario.Repositories
             return await Guardar();
         }
 
-        Task<CategoriaDTO> ICategoria.Categoria(int id)
+        /*Task<CategoriaDTO> ICategoria.Categoria(int id)
         {
             throw new System.NotImplementedException();
         }
@@ -101,6 +101,6 @@ namespace Sistema_Inventario.Repositories
         Task<int> ICategoria.Modificar(int id, CategoriaDTO categoria)
         {
             throw new System.NotImplementedException();
-        }
+       }*/
     }
 }

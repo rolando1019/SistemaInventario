@@ -19,7 +19,7 @@ namespace SinstemaInventario.UnitTest
             public ProductoTest()
             {
                 var options = new DbContextOptionsBuilder<ApplicationDbContext>()
-                    .UseSqlServer("Data Source = Marilis; Initial Catalog = Sistema_Inventario; Integrated Security = True; Trust Server Certificate = True")
+                    .UseSqlServer("Data Source = DESKTOP-RS7J03N; Initial Catalog = Sistema_Inventario; Integrated Security = True; Trust Server Certificate = True")
                     .Options;
 
                 var dbContext = new ApplicationDbContext(options);
@@ -71,7 +71,7 @@ namespace SinstemaInventario.UnitTest
             public async void TestObtenerPorId()
             {
                 //Arrange(Prepara)
-                int id = 5;
+                int id = 2;
 
                 //Act (Actuar)
                 var producto = await _productoRepository.Producto(id);

@@ -97,7 +97,7 @@ namespace Sistema_Inventario.Repositories
             var jwt = new JwtSecurityToken(
                 issuer: _tokenSetting.Issuer,
                 audience: _tokenSetting.Audience,
-                expires: DateTime.Now.AddHours(1),
+                expires: DateTime.Now.AddHours(72),//TIEMPO DE DURACION DEL TOKEN
                 signingCredentials: credenciales,
                 claims: ClaimsUsuario
                 );

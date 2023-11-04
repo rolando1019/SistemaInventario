@@ -20,7 +20,7 @@ namespace SistemaInventarioAPI.IntegracionTest
             using var cliente = application.CreateClient();
 
             var respuesta = await cliente.PostAsJsonAsync("api/login",
-                new UsuarioLogin { Nombre = "Iris", Clave = "12345" });
+                new UsuarioLogin { Nombre = "Iris", Clave = "1234" });
 
             var token = await respuesta.Content.ReadAsStringAsync();
 
