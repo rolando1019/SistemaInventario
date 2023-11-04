@@ -14,7 +14,7 @@ namespace Sistema_Inventario.Endpoints
 
             }).WithTags("Proveedor").RequireAuthorization();
 
-            app.MapGet("api/proveedores/{IdProveedor}", async (int id, IProveedor _proveedor) =>
+            app.MapGet("api/proveedores/{id}", async (int id, IProveedor _proveedor) =>
             {
                 var proveedor = await _proveedor.Proveedor(id);
                 if (proveedor == null)
@@ -32,11 +32,11 @@ namespace Sistema_Inventario.Endpoints
 
                 await _proveedor.Crear(proveedor);
                 // 201 Created . El recurso se creo con exito. y se devuelve la ubucacion del recurso creado
-                return Results.Created("api/proveedores/{proveedor.IdProveedor}", proveedor);
+                return Results.Created("api/proveedores/{proveedor.id}", proveedor);
 
             }).WithTags("Proveedor").RequireAuthorization();
 
-            app.MapPut("api/proveedor/{IdProveedor}", async (int id, ProveedorDTO proveedor, IProveedor _proveedor) =>
+            app.MapPut("api/proveedor/{id}", async (int id, ProveedorDTO proveedor, IProveedor _proveedor) =>
             {
                 var resultado = await _proveedor.Modificar(id, proveedor);
                 if (resultado == 0)
@@ -46,7 +46,7 @@ namespace Sistema_Inventario.Endpoints
 
             }).WithTags("Proveedor").RequireAuthorization();
 
-            app.MapDelete("api/proveedor/{IdProveedor}", async (int id, IProveedor _proveedor) =>
+            app.MapDelete("api/proveedor/{id}", async (int id, IProveedor _proveedor) =>
             {
                 var resultado = await _proveedor.Eliminar(id);
                 if (resultado == 0)

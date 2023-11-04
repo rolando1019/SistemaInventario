@@ -64,7 +64,7 @@ namespace SistemaInventario.UnitTest
         public async void TestObtenerPorId()
         {
             //Arrange(Prepara)
-            int id = 5;
+            int id = 2;
 
             //Act (Actuar)
             var rol = await _rolRepository.Rol(id);
@@ -77,10 +77,10 @@ namespace SistemaInventario.UnitTest
         public async void TestModificar()
         {
             //Arrange(Prepara)
-            int id = 4;
+            int id = 2;
             var objeto = new RolDTO();
             objeto.IdRol = id;
-            objeto.Nombre = "Supervisor";
+            objeto.Nombre = "Vendedor";
 
             //Act (Actuar)
             int resultado = await _rolRepository.Modificar(id, objeto);

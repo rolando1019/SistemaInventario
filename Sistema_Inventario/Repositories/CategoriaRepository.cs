@@ -73,34 +73,48 @@ namespace Sistema_Inventario.Repositories
             return await Guardar();
         }
 
+<<<<<<< HEAD
         /*Task<CategoriaDTO> ICategoria.Categoria(int id)
         {
             throw new System.NotImplementedException();
         }
+=======
+        //Task<CategoriaDTO> ICategoria.Categoria(int id)
+        //{
+        //    throw new System.NotImplementedException();
+        //}
+>>>>>>> bdc1211c7d09e7f60399a8787351a356551df857
 
-        Task<ICollection<CategoriaDTO>> ICategoria.Categorias()
-        {
-            throw new System.NotImplementedException();
-        }
+        //Task<ICollection<CategoriaDTO>> ICategoria.Categorias()
+        //{
+        //    throw new System.NotImplementedException();
+        //}
 
-        Task<int> ICategoria.Crear(CategoriaDTO categoria)
-        {
-            throw new System.NotImplementedException();
-        }
+        //Task<int> ICategoria.Crear(CategoriaDTO categoria)
+        //{
+        //    throw new System.NotImplementedException();
+        //}
 
-        Task<int> ICategoria.Eliminar(int id)
-        {
-            throw new System.NotImplementedException();
-        }
+        //Task<int> ICategoria.Eliminar(int id)
+        //{
+        //    throw new System.NotImplementedException();
+        //}
 
-        Task<int> ICategoria.Guardar()
-        {
-            throw new System.NotImplementedException();
-        }
+        //Task<int> ICategoria.Guardar()
+        //{
+        //    throw new System.NotImplementedException();
+        //}
 
+<<<<<<< HEAD
         Task<int> ICategoria.Modificar(int id, CategoriaDTO categoria)
         {
             throw new System.NotImplementedException();
        }*/
+=======
+        //Task<int> ICategoria.Modificar(int id, CategoriaDTO categoria)
+        //{
+        //    throw new System.NotImplementedException();
+        //}
+>>>>>>> bdc1211c7d09e7f60399a8787351a356551df857
     }
 }
