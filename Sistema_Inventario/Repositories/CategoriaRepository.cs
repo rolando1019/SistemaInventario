@@ -73,34 +73,34 @@ namespace Sistema_Inventario.Repositories
             return await Guardar();
         }
 
-        Task<CategoriaDTO> ICategoria.Categoria(int id)
-        {
-            throw new System.NotImplementedException();
-        }
+        //Task<CategoriaDTO> ICategoria.Categoria(int id)
+        //{
+        //    throw new System.NotImplementedException();
+        //}
 
-        Task<ICollection<CategoriaDTO>> ICategoria.Categorias()
-        {
-            throw new System.NotImplementedException();
-        }
+        //Task<ICollection<CategoriaDTO>> ICategoria.Categorias()
+        //{
+        //    throw new System.NotImplementedException();
+        //}
 
-        Task<int> ICategoria.Crear(CategoriaDTO categoria)
-        {
-            throw new System.NotImplementedException();
-        }
+        //Task<int> ICategoria.Crear(CategoriaDTO categoria)
+        //{
+        //    throw new System.NotImplementedException();
+        //}
 
-        Task<int> ICategoria.Eliminar(int id)
-        {
-            throw new System.NotImplementedException();
-        }
+        //Task<int> ICategoria.Eliminar(int id)
+        //{
+        //    throw new System.NotImplementedException();
+        //}
 
-        Task<int> ICategoria.Guardar()
-        {
-            throw new System.NotImplementedException();
-        }
+        //Task<int> ICategoria.Guardar()
+        //{
+        //    throw new System.NotImplementedException();
+        //}
 
-        Task<int> ICategoria.Modificar(int id, CategoriaDTO categoria)
-        {
-            throw new System.NotImplementedException();
-        }
+        //Task<int> ICategoria.Modificar(int id, CategoriaDTO categoria)
+        //{
+        //    throw new System.NotImplementedException();
+        //}
     }
 }

@@ -17,7 +17,7 @@ namespace Sistema_Inventario.Endpoints
 
             }).WithTags("Categoria").RequireAuthorization();
 
-            app.MapGet("api/categorias/{IdCategoria}", async (int id, ICategoria _categoria) => {
+            app.MapGet("api/categorias/{id}", async (int id, ICategoria _categoria) => {
                 var categoria = await _categoria.Categoria(id);
                 if (categoria == null)
 
@@ -33,11 +33,11 @@ namespace Sistema_Inventario.Endpoints
 
                 await _categoria.Crear(categoria);
                 // 201 Created . El recurso se creo con exito. y se devuelve la ubucacion del recurso creado
-                return Results.Created("api/categorias/{categoria.IdCategoria}", categoria);
+                return Results.Created("api/categorias/{categoria.id}", categoria);
 
             }).WithTags("Categoria").RequireAuthorization();
 
-            app.MapPut("api/categoria/{IdCategoria}", async (int id, CategoriaDTO categoria, ICategoria _categoria) => {
+            app.MapPut("api/categoria/{id}", async (int id, CategoriaDTO categoria, ICategoria _categoria) => {
                 var resultado = await _categoria.Modificar(id, categoria);
                 if (resultado == 0)
                     return Results.NotFound(); // 404 not foud , el recurso solicitado no existe.
@@ -46,7 +46,7 @@ namespace Sistema_Inventario.Endpoints
 
             }).WithTags("Categoria").RequireAuthorization();
 
-            app.MapDelete("api/categoria/{IdCategoria}", async (int id, ICategoria _categoria) => {
+            app.MapDelete("api/categoria/{id}", async (int id, ICategoria _categoria) => {
                 var resultado = await _categoria.Eliminar(id);
                 if (resultado == 0)
                     return Results.NotFound(); // 404 Not found, El recurso solicitado no existe.
