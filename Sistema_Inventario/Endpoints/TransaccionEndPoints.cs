@@ -16,7 +16,7 @@ namespace Sistema_Inventario.Endpoints
 
             }).WithTags("Transacciones").RequireAuthorization();
 
-            app.MapGet("api/transacciones/{IdTransaccion}", async (int id, ITransaccion _transaccion) => {
+            app.MapGet("api/transacciones/{id}", async (int id, ITransaccion _transaccion) => {
                 var transaccion = await _transaccion.Transaccion(id);
                 if (transaccion == null)
 
@@ -36,7 +36,7 @@ namespace Sistema_Inventario.Endpoints
 
             }).WithTags("Transacciones").RequireAuthorization();
 
-            app.MapPut("api/transacciones/{IdTransaccion}", async (int id, TransaccionDTO transaccion, ITransaccion _transaccion) => {
+            app.MapPut("api/transacciones/{id}", async (int id, TransaccionDTO transaccion, ITransaccion _transaccion) => {
                 var resultado = await _transaccion.Modificar(id, transaccion);
                 if (resultado == 0)
                     return Results.NotFound(); // 404 not foud , el recurso solicitado no existe.
@@ -45,7 +45,7 @@ namespace Sistema_Inventario.Endpoints
 
             }).WithTags("Transacciones").RequireAuthorization();
 
-            app.MapDelete("api/transacciones/{IdTransaccion}", async (int id, ITransaccion _transaccion) => {
+            app.MapDelete("api/transacciones/{id}", async (int id, ITransaccion _transaccion) => {
                 var resultado = await _transaccion.Eliminar(id);
                 if (resultado == 0)
                     return Results.NotFound(); // 404 Not found, El recurso solicitado no existe.
