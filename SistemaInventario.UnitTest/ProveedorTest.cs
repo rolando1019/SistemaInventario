@@ -37,11 +37,11 @@ namespace SistemaInventario.UnitTest
         {
             //Arrange(Prepara)
             var objeto = new ProveedorDTO();
-            objeto.Nombre = "Juan";
-            objeto.Empresa = "Profesa";
-            objeto.Direccion = "Sonsonate";
-            objeto.Correo = "juan@ejemplo.com";
-            objeto.Telefono = "12316540";
+            objeto.Nombre = "Jovel";
+            objeto.Empresa = "Salud";
+            objeto.Direccion = "San Vicente";
+            objeto.Correo = "jovel@ejemplo.com";
+            objeto.Telefono = "78954623";
 
             //Act (Actuar)
             int resultado = await _proveedorRepository.Crear(objeto);
@@ -66,7 +66,7 @@ namespace SistemaInventario.UnitTest
         public async void TestObtenerPorId()
         {
             //Arrange(Prepara)
-            int id = 3;
+            int id = 7;
 
             //Act (Actuar)
             var proveedor = await _proveedorRepository.Proveedor(id);
@@ -79,13 +79,13 @@ namespace SistemaInventario.UnitTest
         public async void TestModificar()
         {
             //Arrange(Prepara)
-            int id = 3;
+            int id = 7;
             var objeto = new ProveedorDTO();
             objeto.IdProveedor = id;
-            objeto.Nombre = "José";
-            objeto.Empresa = "Security";
-            objeto.Direccion = "Santa Ana";
-            objeto.Correo = "jose@ejemplo.com";
+            objeto.Nombre = "J J J";
+            objeto.Empresa = "Central";
+            objeto.Direccion = "San Salvador";
+            objeto.Correo = "jjj@ejemplo.com";
             objeto.Telefono = "89754822";
 
             //Act (Actuar)
@@ -99,7 +99,7 @@ namespace SistemaInventario.UnitTest
         public async void TestEliminar()
         {
             //Arrange(Prepara)
-            int id = 3;
+            int id = 8;
 
             //Act (Actuar)
             int resultado = await _proveedorRepository.Eliminar(id);

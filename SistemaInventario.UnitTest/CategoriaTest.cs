@@ -18,7 +18,7 @@ namespace SistemaInventario.UnitTest
 
         public CategoriaTest()
         {
-            var options = new DbContextOptionsBuilder<ApplicationDbContext>().UseSqlServer("Data Source = MARILIS; Initial Catalog=Sistema_Inventario; Integrated Security = True; Trust Server Certificate = True;").Options;
+            var options = new DbContextOptionsBuilder<ApplicationDbContext>().UseSqlServer("Data Source = DESKTOP-9S2PS8B\\SQLEXPRES; Initial Catalog=Sistema_Inventario; Integrated Security = True; Trust Server Certificate = True;").Options;
 
             var dbContext = new ApplicationDbContext(options);
 
@@ -39,8 +39,8 @@ namespace SistemaInventario.UnitTest
         {
             //Arrange(Prepara)
             var objeto = new CategoriaDTO();
-            objeto.Nombre = "Electrodomesticos";
-            objeto.Descripcion = "productos del hogar";
+            objeto.Nombre = "Producto electronicos";
+            objeto.Descripcion = "productos varios";
 
             //Act (Actuar)
             int resultado = await _categoriaRepository.Crear(objeto);
@@ -81,7 +81,7 @@ namespace SistemaInventario.UnitTest
             int id = 1;
             var objeto = new CategoriaDTO();
             objeto.IdCategoria = id;
-            objeto.Nombre = "Lavadora";
+            objeto.Nombre = "Licuadora";
 
             //Act (Actuar)
             int resultado = await _categoriaRepository.Modificar(id, objeto);

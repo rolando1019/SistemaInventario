@@ -19,7 +19,7 @@ namespace SinstemaInventario.UnitTest
             public ProductoTest()
             {
                 var options = new DbContextOptionsBuilder<ApplicationDbContext>()
-                    .UseSqlServer("Data Source = Marilis; Initial Catalog = Sistema_Inventario; Integrated Security = True; Trust Server Certificate = True")
+                    .UseSqlServer("Data Source = DESKTOP-9S2PS8B\\SQLEXPRES; Initial Catalog = Sistema_Inventario; Integrated Security = True; Trust Server Certificate = True")
                     .Options;
 
                 var dbContext = new ApplicationDbContext(options);
@@ -40,7 +40,7 @@ namespace SinstemaInventario.UnitTest
                 //Arrange (Preparar)
 
                 var objeto = new ProductoDTO();
-                objeto.Nombre = "MicrohondaS";
+                objeto.Nombre = "Microhondas";
                 objeto.Desripcion = "Marca LG";
                 objeto.Stock = 2;
                 objeto.Precio = 10;
@@ -71,7 +71,7 @@ namespace SinstemaInventario.UnitTest
             public async void TestObtenerPorId()
             {
                 //Arrange(Prepara)
-                int id = 5;
+                int id = 12;
 
                 //Act (Actuar)
                 var producto = await _productoRepository.Producto(id);
@@ -83,7 +83,7 @@ namespace SinstemaInventario.UnitTest
             public async void TestModificar()
             {
                 //Arrange(Prepara)
-                int id = 7;
+                int id = 14;
                 var objeto = new ProductoDTO();
                 objeto.Nombre = "Freidora de Aire";
                 objeto.Desripcion = "Marca JC, Color blanco ";
@@ -103,7 +103,7 @@ namespace SinstemaInventario.UnitTest
             public async void TestEliminar()
             {
                 //Arrange(Prepara)
-                int id = 5;
+                int id = 13;
 
                 //Act (Actuar)
                 int resultado = await _productoRepository.Eliminar(id);
