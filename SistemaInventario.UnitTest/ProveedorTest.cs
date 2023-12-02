@@ -17,7 +17,7 @@ namespace SistemaInventario.UnitTest
         private readonly ProveedorRepository _proveedorRepository;
         public ProveedorTest()
         {
-            var options = new DbContextOptionsBuilder<ApplicationDbContext>().UseSqlServer("Data Source = DESKTOP-RS7J03N; Initial Catalog = Sistema_Inventario; Integrated Security = True; Trust Server Certificate = True").Options;
+            var options = new DbContextOptionsBuilder<ApplicationDbContext>().UseSqlServer("Data Source = DESKTOP-9S2PS8B\\SQLEXPRES; Initial Catalog=Sistema_Inventario; Integrated Security = True; Trust Server Certificate = True;").Options;
             var dbContext = new ApplicationDbContext(options);
 
             var configurations = new MapperConfiguration(cfg
@@ -66,12 +66,7 @@ namespace SistemaInventario.UnitTest
         public async void TestObtenerPorId()
         {
             //Arrange(Prepara)
-<<<<<<< HEAD
             int id = 2;
-=======
-            int id = 7;
->>>>>>> bdc1211c7d09e7f60399a8787351a356551df857
-
             //Act (Actuar)
             var proveedor = await _proveedorRepository.Proveedor(id);
 
@@ -83,11 +78,7 @@ namespace SistemaInventario.UnitTest
         public async void TestModificar()
         {
             //Arrange(Prepara)
-<<<<<<< HEAD
             int id = 2;
-=======
-            int id = 7;
->>>>>>> bdc1211c7d09e7f60399a8787351a356551df857
             var objeto = new ProveedorDTO();
             objeto.IdProveedor = id;
             objeto.Nombre = "J J J";
@@ -107,11 +98,7 @@ namespace SistemaInventario.UnitTest
         public async void TestEliminar()
         {
             //Arrange(Prepara)
-<<<<<<< HEAD
-            int id = 1002;
-=======
-            int id = 8;
->>>>>>> bdc1211c7d09e7f60399a8787351a356551df857
+            int id = 4;
 
             //Act (Actuar)
             int resultado = await _proveedorRepository.Eliminar(id);

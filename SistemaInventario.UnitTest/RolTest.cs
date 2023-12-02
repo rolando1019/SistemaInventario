@@ -18,7 +18,7 @@ namespace SistemaInventario.UnitTest
 
         public RolTest()
         {
-            var options = new DbContextOptionsBuilder<ApplicationDbContext>().UseSqlServer("Data Source = DESKTOP-RS7J03N; Initial Catalog = Sistema_Inventario; Integrated Security = True; Trust Server Certificate = True").Options;
+            var options = new DbContextOptionsBuilder<ApplicationDbContext>().UseSqlServer("Data Source = DESKTOP-9S2PS8B\\SQLEXPRES; Initial Catalog = Sistema_Inventario; Integrated Security = True; Trust Server Certificate = True").Options;
 
             var dbContext = new ApplicationDbContext(options);
 
@@ -93,7 +93,7 @@ namespace SistemaInventario.UnitTest
         public async void TestEliminar()
         {
             //Arrange(Prepara)
-            int id = 5;
+            int id = 6;
 
             //Act (Actuar)
             int resultado = await _rolRepository.Eliminar(id);

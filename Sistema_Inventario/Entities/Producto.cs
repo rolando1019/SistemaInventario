@@ -15,7 +15,7 @@ namespace Sistema_Inventario.Entities
     [ForeignKey(nameof(Categoria))]
     public int IdCategoria {  get; set; }
 
-    public decimal Precio { get; set; }
+    public Decimal Precio { get; set; }
 
     public int Stock { get; set; }
 

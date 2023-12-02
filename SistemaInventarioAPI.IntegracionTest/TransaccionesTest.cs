@@ -22,7 +22,7 @@ namespace SistemaInventarioAPI.IntegracionTest
                 using var cliente = application.CreateClient();
 
                 var respuesta = await cliente.PostAsJsonAsync("api/login",
-                    new UsuarioLogin { Nombre = "Iris", Clave = "1234" });
+                    new UsuarioLogin { Nombre = "Juan", Clave = "123" });
 
                 var token = await respuesta.Content.ReadAsStringAsync();
 
@@ -35,7 +35,7 @@ namespace SistemaInventarioAPI.IntegracionTest
                 using var application = new WebApplicationFactory<Program>();
                 using var cliente = application.CreateClient();
                 cliente.DefaultRequestHeaders.Add("Authorization", "Bearer " +
-                    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiSXJpcyIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL21vYmlsZXBob25lIjoiMjQ1MTM0NTMiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9zdHJlZXRhZGRyZXNzIjoiaXphbGNvIiwiZXhwIjoxNjk5MjE4OTAzLCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MDExLyIsImF1ZCI6ImxvY2FsaG9zdCJ9.B-RyRHeQMBtJJ1iq_IJrtcq4K2o8rE7ca1Gw_ZgPiA4");
+                    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiSnVhbiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL21vYmlsZXBob25lIjoiNzMwMjU5ODgiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9zdHJlZXRhZGRyZXNzIjoiTGEgUGF6IiwiZXhwIjoxNzAxNzM3MTQyLCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MDExLyIsImF1ZCI6ImxvY2FsaG9zdCJ9.7F5GXB3RnotbyK0jitbcRQ1B3Y77x1FsT502_gZBlec");
 
                 var respuesta = await cliente.GetFromJsonAsync<List<TransaccionDTO>>("api/transacciones");
                 Assert.IsTrue(respuesta != null);
@@ -48,9 +48,9 @@ namespace SistemaInventarioAPI.IntegracionTest
         {
             using var application = new WebApplicationFactory<Program>();
             using var cliente = application.CreateClient();
-            cliente.DefaultRequestHeaders.Add("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiSXJpcyIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL21vYmlsZXBob25lIjoiMjQ1MTM0NTMiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9zdHJlZXRhZGRyZXNzIjoiaXphbGNvIiwiZXhwIjoxNjk5MjE4OTAzLCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MDExLyIsImF1ZCI6ImxvY2FsaG9zdCJ9.B-RyRHeQMBtJJ1iq_IJrtcq4K2o8rE7ca1Gw_ZgPiA4");
+            cliente.DefaultRequestHeaders.Add("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiSnVhbiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL21vYmlsZXBob25lIjoiNzMwMjU5ODgiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9zdHJlZXRhZGRyZXNzIjoiTGEgUGF6IiwiZXhwIjoxNzAxNzM3MTQyLCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MDExLyIsImF1ZCI6ImxvY2FsaG9zdCJ9.7F5GXB3RnotbyK0jitbcRQ1B3Y77x1FsT502_gZBlec");
 
-            var respuesta = await cliente.GetFromJsonAsync<TransaccionDTO>("api/transacciones/2004");
+            var respuesta = await cliente.GetFromJsonAsync<TransaccionDTO>("api/transacciones/6");
 
             Assert.IsTrue(respuesta != null);
 
@@ -63,7 +63,7 @@ namespace SistemaInventarioAPI.IntegracionTest
             using var application = new WebApplicationFactory<Program>();
             using var cliente = application.CreateClient();
             var objeto = new TransaccionDTO { IdProducto = 1, Fechayhora = DateTime.Now, TipoTransaccion = "Traslado", Cantidad = 2, IdUsuario = 1 };
-            cliente.DefaultRequestHeaders.Add("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiSXJpcyIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL21vYmlsZXBob25lIjoiMjQ1MTM0NTMiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9zdHJlZXRhZGRyZXNzIjoiaXphbGNvIiwiZXhwIjoxNjk5MjE4OTAzLCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MDExLyIsImF1ZCI6ImxvY2FsaG9zdCJ9.B-RyRHeQMBtJJ1iq_IJrtcq4K2o8rE7ca1Gw_ZgPiA4");
+            cliente.DefaultRequestHeaders.Add("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiSnVhbiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL21vYmlsZXBob25lIjoiNzMwMjU5ODgiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9zdHJlZXRhZGRyZXNzIjoiTGEgUGF6IiwiZXhwIjoxNzAxNzM3MTQyLCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MDExLyIsImF1ZCI6ImxvY2FsaG9zdCJ9.7F5GXB3RnotbyK0jitbcRQ1B3Y77x1FsT502_gZBlec");
             var respuesta = await cliente.PostAsJsonAsync("api/transacciones", objeto);
 
             Assert.AreEqual(HttpStatusCode.Created, respuesta.StatusCode);
@@ -77,8 +77,8 @@ namespace SistemaInventarioAPI.IntegracionTest
             using var cliente = application.CreateClient();
             var objeto = new TransaccionDTO { IdProducto = 1, Fechayhora = DateTime.Now, TipoTransaccion = "Traslado", Cantidad = 2, IdUsuario = 1 };
 
-            cliente.DefaultRequestHeaders.Add("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiSXJpcyIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL21vYmlsZXBob25lIjoiMjQ1MTM0NTMiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9zdHJlZXRhZGRyZXNzIjoiaXphbGNvIiwiZXhwIjoxNjk5MjE4OTAzLCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MDExLyIsImF1ZCI6ImxvY2FsaG9zdCJ9.B-RyRHeQMBtJJ1iq_IJrtcq4K2o8rE7ca1Gw_ZgPiA4");
-            var respuesta = await cliente.PutAsJsonAsync("api/transacciones/2008", objeto);
+            cliente.DefaultRequestHeaders.Add("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiSnVhbiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL21vYmlsZXBob25lIjoiNzMwMjU5ODgiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9zdHJlZXRhZGRyZXNzIjoiTGEgUGF6IiwiZXhwIjoxNzAxNzM3MTQyLCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MDExLyIsImF1ZCI6ImxvY2FsaG9zdCJ9.7F5GXB3RnotbyK0jitbcRQ1B3Y77x1FsT502_gZBlec");
+            var respuesta = await cliente.PutAsJsonAsync("api/transacciones/6", objeto);
 
             Assert.AreEqual(HttpStatusCode.OK, respuesta.StatusCode);
 
@@ -89,8 +89,8 @@ namespace SistemaInventarioAPI.IntegracionTest
         {
             using var application = new WebApplicationFactory<Program>();
             using var cliente = application.CreateClient();
-            cliente.DefaultRequestHeaders.Add("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiSXJpcyIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL21vYmlsZXBob25lIjoiMjQ1MTM0NTMiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9zdHJlZXRhZGRyZXNzIjoiaXphbGNvIiwiZXhwIjoxNjk5MjE4OTAzLCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MDExLyIsImF1ZCI6ImxvY2FsaG9zdCJ9.B-RyRHeQMBtJJ1iq_IJrtcq4K2o8rE7ca1Gw_ZgPiA4");
-            var respuesta = await cliente.DeleteAsync("api/transacciones/3003");
+            cliente.DefaultRequestHeaders.Add("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiSnVhbiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL21vYmlsZXBob25lIjoiNzMwMjU5ODgiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9zdHJlZXRhZGRyZXNzIjoiTGEgUGF6IiwiZXhwIjoxNzAxNzM3MTQyLCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MDExLyIsImF1ZCI6ImxvY2FsaG9zdCJ9.7F5GXB3RnotbyK0jitbcRQ1B3Y77x1FsT502_gZBlec");
+            var respuesta = await cliente.DeleteAsync("api/transacciones/11");
 
             Assert.AreEqual(HttpStatusCode.NoContent, respuesta.StatusCode);
 

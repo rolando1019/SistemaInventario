@@ -18,11 +18,7 @@ namespace SistemaInventario.UnitTest
 
         public CategoriaTest()
         {
-<<<<<<< HEAD
-            var options = new DbContextOptionsBuilder<ApplicationDbContext>().UseSqlServer("Data Source = DESKTOP-RS7J03N; Initial Catalog=Sistema_Inventario; Integrated Security = True; Trust Server Certificate = True;").Options;
-=======
             var options = new DbContextOptionsBuilder<ApplicationDbContext>().UseSqlServer("Data Source = DESKTOP-9S2PS8B\\SQLEXPRES; Initial Catalog=Sistema_Inventario; Integrated Security = True; Trust Server Certificate = True;").Options;
->>>>>>> bdc1211c7d09e7f60399a8787351a356551df857
 
             var dbContext = new ApplicationDbContext(options);
 
@@ -82,14 +78,10 @@ namespace SistemaInventario.UnitTest
         public async void TestModificar()
         {
             //Arrange(Prepara)
-            int id = 2;
+            int id = 1;
             var objeto = new CategoriaDTO();
             objeto.IdCategoria = id;
-<<<<<<< HEAD
-            objeto.Nombre = "cocina";
-=======
             objeto.Nombre = "Licuadora";
->>>>>>> bdc1211c7d09e7f60399a8787351a356551df857
 
             //Act (Actuar)
             int resultado = await _categoriaRepository.Modificar(id, objeto);
